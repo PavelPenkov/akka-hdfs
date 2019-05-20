@@ -1,0 +1,47 @@
+{
+  "uuid": "77065ac4-1b69-4dda-ac19-bc7c70656aac",
+  "timestamp": "2019-05-17 13:56:53 +0700",
+  "server_timestamp": "2019-05-17 10:58:19 +0000",
+  "number": 2,
+  "page_view_id": "ff8415f8-2ade-45b4-b82a-471945f03290",
+  "previous_page_view_id": "518e632a-7b1e-4da8-9014-952a5c620cf8",
+  "invalid": false,
+  "user": {
+  "session_id": "143eh3qjwmjhpx55fdzgcfoa",
+  "client_id": 13107806,
+  "google_id": "cdf01c42-d70d-4b85-b374-68ab1b490baf",
+  "appsflyer_id": "1545320409326-8783427253977568316",
+  "long_cookie": "109e2c97-1634-4916-82f6-be0d17b6f638",
+  "ip": "92.100.216.3"
+},
+  "attributes": {
+  "namespace": "bx",
+  "user_agent": "Device SM-A605FN; ANDROID 9; SDK 2.0.4",
+  "platform": "android",
+  "app_version": "5.1",
+  "screen_resolution": "1080x2094",
+  "page": "productDetail",
+  "previous_page": "productDetail",
+  "current_url": "ozon://products/35153532/",
+  "referral_url": "ozon://products/4975530/",
+  "ab_group": 39
+},
+  "action": {
+  "area": "main",
+  "widget": "pdp-widget",
+  "object": "35153532",
+  "value": "1553:1:5",
+  "type": "view",
+  "context": "s-667::"
+},
+  "version": "1",
+  "tracing": {
+  "uber-trace-id": "70bbe1579a54a0b:3321b59b01437d9e:70bbe1579a54a0b:1"
+},
+  "action_type": "",
+  "page": {},
+  "object": {},
+  "properties": {},
+  "custom": {},
+  "widget": {}
+}
