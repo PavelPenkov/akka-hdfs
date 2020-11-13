@@ -1,3 +1,7 @@
+import com.typesafe.sbt.packager.docker.Cmd
+import com.typesafe.sbt.packager.docker.DockerPermissionStrategy
+import com.typesafe.sbt.packager.docker.DockerPermissionStrategy.None
+
 ThisBuild / version          := "0.1.0-SNAPSHOT"
 ThisBuild / organization     := "ru.ozon"
 ThisBuild / organizationName := "akka_hdfs"
@@ -31,3 +35,25 @@ javaOptions in Universal ++= Seq(
   "-Dcom.sun.management.jmxremote.ssl=false",
   "-J-Xmx2g"
 )
+
+javaOptions in run ++= Seq(
+  "-Djava.library.path=/usr/lib/x86_64-linux-gnu"
+)
+
+fork in run := true
+
+dockerPermissionStrategy in Docker := DockerPermissionStrategy.None
+
+dockerGroupLayers := PartialFunction.empty
+
+mainClass := Some("ru.ozon.akka_hdfs.FileToHdfs")
+
+dockerCommands := Seq(
+  Cmd("FROM openjdk:11"),
+  Cmd("RUN apt-get update"),
+  Cmd("RUN apt-get -y install zlib1g-dev libisal-dev libzstd-dev liblz4-dev"),
+  Cmd("WORKDIR /opt/docker"),
+  Cmd("COPY opt /opt"),
+  Cmd("ENTRYPOINT /opt/docker/bin/file-to-hdfs")
+)
+

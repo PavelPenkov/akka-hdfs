@@ -44,10 +44,6 @@ object Components {
 
   val hdfsConf = {
     val conf = new Configuration()
-    conf.set("fs.default.name", "hdfs://nn02.hdp.dwh.o3.ru:8020")
-    conf.set("ipc.client.connect.timeout", "1000")
-    conf.set("dfs.client.failover.max.attempts", "3")
-    conf.set("dfs.client.block.write.replace-datanode-on-failure.enable", "true")
     conf
   }
 
@@ -57,7 +53,7 @@ object Components {
 
   val pathGenerator = FilePathGenerator { case (_, timestamp)  =>
     val suffix = rng.alphanumeric.take(6).mkString
-    s"/tmp/akka_hdfs_benchmark_${timestamp}_${suffix}" }
+    s"file:///tmp/akka_hdfs_benchmark_${timestamp}_${suffix}" }
 
   val writingSettings = HdfsWritingSettings().withNewLine(false)
     .withOverwrite(true)
