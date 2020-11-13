@@ -204,7 +204,7 @@ object FileToHdfs extends App with Common {
   registerSignals
 
   val fs = FileSystems.getDefault
-  val hdfs = Components.hdfsFlowGz
+  val hdfs = Components.hdfsFlowIntel
 
   val src = FileTailSource.lines(fs.getPath("events.json"), 32 * 1024, 1 second)
     .map(s => HdfsWriteMessage(ByteString(s).concat(newLine)))
